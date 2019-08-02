@@ -29,18 +29,23 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Builder(
           builder: (context) {
-            TextboxQuestion avd =
-                TextboxQuestion(options: {"type": "number", "label": "labeel", "key": "uno"});
-            TextboxQuestion text =
-                TextboxQuestion(options: {"type": "text", "label": "labeel", "key": "dos"});
+            TextboxQuestion avd = TextboxQuestion(
+                options: {"type": "number", "label": "labeel", "key": "uno"});
+            TextboxQuestion text = TextboxQuestion(
+                options: {"type": "text", "label": "labeel", "key": "dos"});
             List<QuestionBase> lista = List<QuestionBase>();
             lista.add(avd);
             lista.add(text);
-            lista.add(
-              TextboxQuestion(options: {"type": "text", "label": "klk", "key": "adsfds"})
-            );
+            lista.add(TextboxQuestion(
+                options: {"type": "text", "label": "klk", "key": "adsfds"}));
             return DynamicForm(
               questions: lista,
+              onSubmit: (val) {
+                print('ENVIADO::$val');
+              },
+              onChange: (val) {
+                print('cambio ${val.toString()}');
+              },
             );
 
             // return Column(
