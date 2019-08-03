@@ -30,14 +30,18 @@ class _MyAppState extends State<MyApp> {
         body: Builder(
           builder: (context) {
             TextboxQuestion avd = TextboxQuestion(
-                options: {"type": "number", "label": "labeel", "key": "uno"});
+                options: {"type": "password", "label": "labeel", "key": "uno", "show": true});
             TextboxQuestion text = TextboxQuestion(
                 options: {"type": "text", "label": "labeel", "key": "dos"});
             List<QuestionBase> lista = List<QuestionBase>();
             lista.add(avd);
             lista.add(text);
-            lista.add(TextboxQuestion(
-                options: {"type": "text", "label": "klk", "key": "adsfds"}));
+            lista.add(TextboxQuestion(options: {
+              "type": "text",
+              "label": "klk",
+              "key": "adsfds",
+              "validators": [Validators.isRequired]
+            }));
             return DynamicForm(
               questions: lista,
               onSubmit: (val) {

@@ -64,6 +64,6 @@ class _DynamicFormState extends State<DynamicForm> {
   void initState() {
     super.initState();
 
-    changes = form.groupObs.listen(onChange);
+    changes = form.groupObs.distinct().listen(onChange);
   }
 }
