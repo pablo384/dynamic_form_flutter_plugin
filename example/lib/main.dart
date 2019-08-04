@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:dynamic_forms/dynamic_forms.dart';
 
 void main() => runApp(MyApp());
@@ -12,8 +9,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
   @override
   void initState() {
     super.initState();
@@ -55,12 +50,12 @@ class _MyAppState extends State<MyApp> {
             lista.add(DropdownQuestion(options: {
               "type": "text",
               "label": "klk",
-              "key": "adsfds",
-              "value": null,
+              "key": "qwe",
+              "value": "0",
               "options": [
-                {"label": "uno", "value": 1},
-                {"label": "dos", "value": 2},
-                {"label": "tres", "value": 3},
+                {"label": "uno", "value": "0"},
+                {"label": "dos", "value": "2"},
+                {"label": "tres", "value": "3"},
               ],
               "validators": [Validators.isRequired]
             }));

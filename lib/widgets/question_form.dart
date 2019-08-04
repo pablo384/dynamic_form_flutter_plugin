@@ -1,7 +1,5 @@
-import 'package:dynamic_forms/rebuild_manager.dart';
 import 'package:dynamic_forms/text_box_question.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../form_group.dart';
@@ -23,6 +21,8 @@ class _QuestionFormState extends State<QuestionForm> {
   BehaviorSubject<String> errormsg = BehaviorSubject<String>();
   TextEditingController _edit;
   FocusNode _focusNode;
+  bool valbool = false;
+  dynamic valOthers;
   @override
   void initState() {
     super.initState();
@@ -31,6 +31,13 @@ class _QuestionFormState extends State<QuestionForm> {
       _focusNode = FocusNode();
       _edit.addListener(() {
         formGroup.setValue(question.key, _edit.text);
+      });
+    } else if (question is DropdownQuestion) {
+      setState(() {
+        valOthers = question.value == null
+            ? question.options[0]['value']
+            : question.value;
+        print('OTHER::' + valOthers.toString());
       });
     }
   }
@@ -75,10 +82,13 @@ class _QuestionFormState extends State<QuestionForm> {
         children: <Widget>[
           Checkbox(
             key: Key(question.key),
-            value: question.value,
+            value: valbool,
             onChanged: (val) {
+              print('newval:' + val.toString());
               formGroup.setValue(question.key, val);
-              setState(() {});
+              setState(() {
+                valbool = val;
+              });
             },
           ),
           Text(question.label),
@@ -88,27 +98,21 @@ class _QuestionFormState extends State<QuestionForm> {
 
     if (question is DropdownQuestion && question.options.length > 1) {
       return DropdownButton<dynamic>(
-        // value: 0,
+        value: valOthers ?? question.options[0]['value'],
         onChanged: (value) {
           formGroup.setValue(question.key, value);
-          setState(() {});
+          setState(() {
+            valOthers = value;
+          });
         },
         key: Key(question.key),
         items: [
-          DropdownMenuItem<dynamic>(
-            value: 49,
-            child: Text('prueba'),
-          ),
-          DropdownMenuItem<dynamic>(
-            value: 22,
-            child: Text('ddd'),
-          ),
-          // ...question.options.map<DropdownMenuItem>((val) {
-          //   return DropdownMenuItem<dynamic>(
-          //     value: val['value'] ?? 9,
-          //     child: Text(val['label']),
-          //   );
-          // }).toList()
+          ...question.options.map<DropdownMenuItem>((val) {
+            return DropdownMenuItem<dynamic>(
+              value: val['value'] ?? 9,
+              child: Text(val['label']),
+            );
+          }).toList()
         ],
       );
     }
