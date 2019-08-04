@@ -17,7 +17,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    // initPlatformState();
   }
 
   @override
@@ -29,8 +28,12 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Builder(
           builder: (context) {
-            TextboxQuestion avd = TextboxQuestion(
-                options: {"type": "password", "label": "labeel", "key": "uno", "show": true});
+            TextboxQuestion avd = TextboxQuestion(options: {
+              "type": "password",
+              "label": "labeel",
+              "key": "uno",
+              "show": true
+            });
             TextboxQuestion text = TextboxQuestion(
                 options: {"type": "text", "label": "labeel", "key": "dos"});
             List<QuestionBase> lista = List<QuestionBase>();
@@ -42,6 +45,25 @@ class _MyAppState extends State<MyApp> {
               "key": "adsfds",
               "validators": [Validators.isRequired]
             }));
+            lista.add(CheckBoxQuestion(options: {
+              "type": "text",
+              "label": "klk",
+              "key": "adsfds",
+              "value": false,
+              "validators": [Validators.isRequired]
+            }));
+            lista.add(DropdownQuestion(options: {
+              "type": "text",
+              "label": "klk",
+              "key": "adsfds",
+              "value": null,
+              "options": [
+                {"label": "uno", "value": 1},
+                {"label": "dos", "value": 2},
+                {"label": "tres", "value": 3},
+              ],
+              "validators": [Validators.isRequired]
+            }));
             return DynamicForm(
               questions: lista,
               onSubmit: (val) {
@@ -51,17 +73,6 @@ class _MyAppState extends State<MyApp> {
                 print('cambio ${val.toString()}');
               },
             );
-
-            // return Column(
-            //   children: <Widget>[
-            //     QuestionForm(
-            //       question: avd,
-            //     ),
-            //     QuestionForm(
-            //       question: text,
-            //     ),
-            //   ],
-            // );
           },
         ),
       ),

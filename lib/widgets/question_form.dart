@@ -38,11 +38,14 @@ class _QuestionFormState extends State<QuestionForm> {
   @override
   Widget build(BuildContext context) {
     // var reb = RebuildManager();
-    if (question.controlType == 'textbox') {
-      if (!question.show) {
-        return SizedBox();
-      }
+    if (!question.show) {
+      return SizedBox(
+        key: Key(question.key),
+      );
+    }
+    if (question is TextboxQuestion) {
       return TextFormField(
+        key: Key(question.key),
         obscureText: question.type == "password",
         controller: _edit,
         keyboardType: question.type == "number"
@@ -64,6 +67,52 @@ class _QuestionFormState extends State<QuestionForm> {
         },
       );
     }
+
+    if (question is CheckBoxQuestion) {
+      print(question.toString());
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Checkbox(
+            key: Key(question.key),
+            value: question.value,
+            onChanged: (val) {
+              formGroup.setValue(question.key, val);
+              setState(() {});
+            },
+          ),
+          Text(question.label),
+        ],
+      );
+    }
+
+    if (question is DropdownQuestion && question.options.length > 1) {
+      return DropdownButton<dynamic>(
+        // value: 0,
+        onChanged: (value) {
+          formGroup.setValue(question.key, value);
+          setState(() {});
+        },
+        key: Key(question.key),
+        items: [
+          DropdownMenuItem<dynamic>(
+            value: 49,
+            child: Text('prueba'),
+          ),
+          DropdownMenuItem<dynamic>(
+            value: 22,
+            child: Text('ddd'),
+          ),
+          // ...question.options.map<DropdownMenuItem>((val) {
+          //   return DropdownMenuItem<dynamic>(
+          //     value: val['value'] ?? 9,
+          //     child: Text(val['label']),
+          //   );
+          // }).toList()
+        ],
+      );
+    }
+
     return Container(
       child: Text('data'),
     );

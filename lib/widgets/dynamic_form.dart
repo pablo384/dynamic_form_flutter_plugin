@@ -36,6 +36,7 @@ class _DynamicFormState extends State<DynamicForm> {
           child: Column(
             children: <Widget>[
               ...questions.map((item) {
+                form.setValue(item.key, item.value);
                 return QuestionForm(
                   question: item,
                   formGroup: form,

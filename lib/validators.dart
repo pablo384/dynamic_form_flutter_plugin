@@ -1,8 +1,8 @@
 class Validators {
   static isRequired(String val) {
-    if (val.trim().length>0 && val.isNotEmpty) {
+    if (val.trim().length > 0 && val.isNotEmpty) {
       return null;
-    }else {
+    } else {
       return 'invalid';
     }
   }
