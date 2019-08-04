@@ -1,5 +1,5 @@
-name: dynamic_forms_example
-description: Demonstrates how to use the dynamic_forms plugin.
+name: dynamic_forms_comunity_example
+description: Demonstrates how to use the dynamic_forms_comunity plugin.
 publish_to: 'none'
 
 environment:
@@ -17,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  dynamic_forms:
+  dynamic_forms_comunity:
     path: ../
 
 # For information on the generic Dart part of this file, see the

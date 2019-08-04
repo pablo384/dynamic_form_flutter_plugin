@@ -1,6 +1,6 @@
-# dynamic_forms_example
+# dynamic_forms_comunity_example
 
-Demonstrates how to use the dynamic_forms plugin.
+Demonstrates how to use the dynamic_forms_comunity plugin.
 
 ## Getting Started
 

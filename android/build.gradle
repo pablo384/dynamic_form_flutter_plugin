@@ -1,4 +1,4 @@
-group 'com.example.dynamic_forms'
+group 'com.example.dynamic_forms_comunity'
 version '1.0-SNAPSHOT'
 
 buildscript {

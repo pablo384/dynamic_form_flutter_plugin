@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dynamic_forms/dynamic_forms.dart';
+import 'package:dynamic_forms_comunity/dynamic_forms_comunity.dart';
 
 void main() => runApp(MyApp());
 

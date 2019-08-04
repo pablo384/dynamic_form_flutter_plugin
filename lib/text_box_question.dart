@@ -1,4 +1,4 @@
-import 'package:dynamic_forms/question_base.dart';
+import 'package:dynamic_forms_comunity/question_base.dart';
 
 class TextboxQuestion extends QuestionBase {
   final controlType = 'textbox';

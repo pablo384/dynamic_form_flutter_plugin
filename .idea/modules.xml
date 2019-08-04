@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dynamic_forms.iml" filepath="$PROJECT_DIR$/dynamic_forms.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/dynamic_forms_android.iml" filepath="$PROJECT_DIR$/android/dynamic_forms_android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/android/dynamic_forms_example_android.iml" filepath="$PROJECT_DIR$/example/android/dynamic_forms_example_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dynamic_forms_comunity.iml" filepath="$PROJECT_DIR$/dynamic_forms_comunity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/dynamic_forms_comunity_android.iml" filepath="$PROJECT_DIR$/android/dynamic_forms_comunity_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/dynamic_forms_comunity_example_android.iml" filepath="$PROJECT_DIR$/example/android/dynamic_forms_comunity_example_android.iml" />
     </modules>
   </component>
 </project>

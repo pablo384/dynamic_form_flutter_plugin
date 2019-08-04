@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:dynamic_forms/widgets/question_form.dart';
+import 'package:dynamic_forms_comunity/widgets/question_form.dart';
 import 'package:flutter/material.dart';
 
 import '../form_group.dart';

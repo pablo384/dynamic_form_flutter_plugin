@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class SwiftDynamicFormsPlugin: NSObject, FlutterPlugin {
+public class SwiftDynamicFormsComunityPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "dynamic_forms", binaryMessenger: registrar.messenger())
-    let instance = SwiftDynamicFormsPlugin()
+    let channel = FlutterMethodChannel(name: "dynamic_forms_comunity", binaryMessenger: registrar.messenger())
+    let instance = SwiftDynamicFormsComunityPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

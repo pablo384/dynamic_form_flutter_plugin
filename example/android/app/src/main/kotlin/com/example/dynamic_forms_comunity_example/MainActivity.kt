@@ -1,4 +1,4 @@
-package com.example.dynamic_forms_example
+package com.example.dynamic_forms_comunity_example
 
 import android.os.Bundle
 
