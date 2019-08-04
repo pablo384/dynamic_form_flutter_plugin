@@ -11,7 +11,6 @@ dependencies:
   flutter:
     sdk: flutter
   rxdart: ^0.22.1
-  provider: ^3.0.0+1
 
 dev_dependencies:
   flutter_test:

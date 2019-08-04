@@ -14,8 +14,12 @@ void main() {
   tearDown(() {
     channel.setMockMethodCallHandler(null);
   });
-
+  test('question', () async {
+    QuestionBase avd = TextboxQuestion(options: {"type": "nufasdfmber"});
+    print(avd.toString());
+    expect(avd.value, '');
+  });
   test('getPlatformVersion', () async {
-    expect(await DynamicFormsComunity.platformVersion, '42');
+    // expect(await DynamicFormsComunity.platformVersion, '42');
   });
 }
